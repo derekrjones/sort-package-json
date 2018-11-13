@@ -105,7 +105,9 @@ function sortPackageJson(packageJson) {
       return index == arr.indexOf(el);
     });
   }
-  sortSubKey('keywords', null, true);
+
+  // keep author preference for keywords, we don't want `a b MyNamespace y z`
+  // sortSubKey('keywords', null, true);
   sortSubKey('homepage');
   sortSubKey('bugs', [ 'url', 'email' ]);
   sortSubKey('license', [ 'type', 'url' ]);
